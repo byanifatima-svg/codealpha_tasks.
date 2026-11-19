@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+   background-color: rgb(70, 67, 67); 
+   width: 300px;
+   height: 480px;
+   display: flex;
+   flex-direction: column;
+   border: 2px solid rgb(74, 71, 71);
+   border-radius: 15px;
+}
+#display{
+    background-color: rgb(74, 71, 71);
+    width: 260px;
+    height: 150px;
+    font-size: 30px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 18px;
+    border-radius: 25px;
+    box-sizing: border-box; 
+}
+
+
+.btn{
+    padding-top: 15px;
+    padding-left: 35px;
+    padding-bottom: 160px;
+    margin: 10px;
+    width: 250px;
+    height: 130px;
+    background-color: rgb(74, 71, 71);
+    display: grid;
+    
+    grid-template-columns: repeat(5,1fr);
+    border-radius: 15px;
+    gap: 10px;
+}
+.btn button{
+    height: 45px;
+    font-size: 20px;
+    width: 45px;
+    border-radius: 35px;
+    cursor: pointer;
+    box-shadow: 0 5px  6px rgb(124, 124, 133);
+}
+.btn button:hover{
+    transform: scale(1.1);
+}
+
+.btn button:active{
+    background-color: rgb(128, 126, 125);
+}
+
+.btn button:nth-child(1){
+    background-color: rgb(205, 107, 46);
+}
+.btn button:nth-child(24){
+    background-color: rgb(223, 173, 26);
+}
+
+@media (min-width:0px) and (max-width:400px){
+/* body{width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.btn button{
+    font-size: 18px;
+}}
+    
