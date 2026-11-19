@@ -1,23 +1,125 @@
-const display = document.querySelector("#display");
-const result = document.querySelector("#result");
-const btns = document.querySelectorAll("#btns button");
-const clear = document.querySelector(".clear");
-const del = document.querySelector(".delete");
-const plas = document.querySelector(".plas")
-btns.forEach(function(func_btns){
-    func_btns.addEventListener("click",function() {
-        if(func_btns.textContent === "AC"){
-            display.textContent = "";
+const images = document.querySelectorAll(".gallery_images img");
+
+const prevBtn = document.querySelector(".prev_btn");
+const nextBtn = document.querySelector(".next_btn");
+
+const currentNumber = document.querySelector(".current_number");
+const totalNumber = document.querySelector(".total_number");
+
+let currentIndex = 0;
+
+
+// Total number of images
+
+totalNumber.textContent = String(images.length).padStart(2, "0");
+
+
+// Update Gallery
+
+function updateGallery() {
+
+    images.forEach(function (img, index) {
+
+        img.className = "";
+
+        let position = index - currentIndex;
+
+        const total = images.length;
+
+
+        // Circular movement
+
+        if (position > total / 2) {
+            position -= total;
         }
-        else if (func_btns.textContent === "DEL"){
-            display.textContent = display.textContent.slice(0,-1);
+
+        if (position < -total / 2) {
+            position += total;
         }
-        else if (func_btns.textContent === "="){
-            try{display.textContent = eval(display.textContent);}
-                catch{display.textContent = "Error";}
+
+
+        // Center
+
+        if (position === 0) {
+            img.classList.add("active");
         }
-        else{display.textContent += func_btns.textContent;}
-        
-});
+
+
+        // Left
+
+        else if (position === -1) {
+            img.classList.add("left");
+        }
+
+
+        // Right
+
+        else if (position === 1) {
+            img.classList.add("right");
+        }
+
+
+        // Left 2
+
+        else if (position === -2) {
+            img.classList.add("left2");
+        }
+
+
+        // Right 2
+
+        else if (position === 2) {
+            img.classList.add("right2");
+        }
+
+
+        // Other images
+
+        else {
+            img.classList.add("hidden");
+        }
+
+    });
+
+
+    // Update counter
+
+    currentNumber.textContent =
+        String(currentIndex + 1).padStart(2, "0");
+
+}
+
+
+
+// Next Button
+
+nextBtn.addEventListener("click", function () {
+
+    currentIndex++;
+
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+
+    updateGallery();
+
 });
 
+
+
+// Previous Button
+
+prevBtn.addEventListener("click", function () {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    }
+
+    updateGallery();
+
+});
+
+
+updateGallery();

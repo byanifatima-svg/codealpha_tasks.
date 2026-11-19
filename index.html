@@ -1,38 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Calculator</title>
+
+    <title>My Project Gallery</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+
     <div class="container">
-        <div id="display"></div>
-        <div class="btn" id="btns">
-            <button class="clear" style="font-size: 19px;">AC</button>
-            <button class="delete" style="font-size: 17px;">DEL</button>
-            <button>%</button>
-            <button>/</button> <br>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button> <br>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button> <br>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="plas">+</button> <br>
-            <button>00</button>
-            <button>0</button>
-            <button>.</button>
-            <button>=</button> <br>
-        </div>
+
+        <header class="header">
+
+            <span class="subtitle">MY CREATIVE SPACE</span>
+
+            <h1>Project Gallery</h1>
+
+            <p>
+                A collection of my projects, ideas, and creative work.
+            </p>
+
+        </header>
+
+
+        <main class="gallery">
+
+            <div class="gallery_images">
+
+                <img src="images/calculator.jpg" alt="Project 1">
+                <img src="images/digital_notebook.jpg" alt="Project 2">
+                <img src="images/grocery_management.jpg" alt="Project 3">
+                <img src="images/hangman_game.jpg" alt="Project 4">
+                <img src="images/stu_dashboard.png" alt="Project 5">
+                <img src="images/stu_registretion.jpg" alt="Project 6">
+                <img src="images/digital_clock.jpg" alt="Project 7">
+                <img src="images/project_gallary.jpg" alt="Project 8">
+
+            </div>
+
+
+            <div class="gallery_controls">
+
+                <button class="prev_btn" aria-label="Previous image">
+                    &#8592;
+                </button>
+
+                <div class="counter">
+                    <span class="current_number">01</span>
+                    <span class="divider">/</span>
+                    <span class="total_number">08</span>
+                </div>
+
+                <button class="next_btn" aria-label="Next image">
+                    &#8594;
+                </button>
+
+            </div>
+
+        </main>
+
+
+        <footer>
+            <p>Designed & Developed by <span>Fatima Bayani</span></p>
+        </footer>
+
     </div>
-    
+
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
